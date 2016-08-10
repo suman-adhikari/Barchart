@@ -49,6 +49,7 @@
 
                 $text = $(SVG('text')).attr('x', $txtX).attr('y', $txtY).attr('class', 'chartLabel').attr('transform', 'rotate(310,' + $txtX + ',' + $txtY + ')').text(value[0].Date);
                 var $y = $width;
+                //The g element is a container used to group other svg elements. The transformation applied to it is applied to all child element.
                 $g = $(SVG('g')).attr('transform', 'translate(' + options.chartXY[0] + ',' + options.chartXY[1] + ') rotate(180,' + $i + ',' + $width + ')');
                 $count = 0;
 
@@ -113,7 +114,7 @@
 
                for ($i = 0; $i < $rowNo; $i++) {
                    $tbody.append($('<tr>'));
-                   $tbody.find("tr:last").append($('<td>').css("background-color", $color[$i]));
+                   $tbody.find("tr:last").append($('<td>').css("background-color", options.bar_color[$i]));
                    $tbody.find("tr:last").append($('<td>').text($comp[$i]));
                }
 
