@@ -1,5 +1,5 @@
 (function($){
-
+   //hello world
     $.fn.barChart = function(option) {
 
         $data = option.data;
